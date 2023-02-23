@@ -1,0 +1,72 @@
+Name: Mirza Ana-Maria
+
+Group: 321CA
+
+## Analiza Algoritmilor - Tema 2
+
+### Task 1 - Trial
+
+Pentru acest task, am creat o matrice de referinta
+ce a ajutat in formularea clauzelor formulei
+3-CNF. Aceasta avea Dimensiune K * M, unde K sunt
+numarul de linii si M numarul de coloane. Liniile
+reprezentand numarul de pachete alese si coloanele
+reprezentand numarul total de pachete.
+
+            
+                |   1      2   ...   M   |
+                | M + 1  M + 2 ... M * 2 |
+         Mat -> |   .               ...  |
+                |   .     ...  ...  ...  |
+                |   .     ...  ... M * K |  
+
+1. Primul tip de clauza a constat in fortarea ca pentru fiecare
+pachet sa existe o solutie valida. Asadar, pe fiecare linie
+trebuie sa existe cate o valoare adevarata.
+
+2. Al doilea tip de clauza dedusa a fost sa nu exista doua
+acelasi pachet ales de doua ori pentru aceasi acoperire.
+Raportandu-ne la matrice, aceasta se traduce ca luam
+doua cate doua valorile de pe coloane negate si formam
+astfel inca cateva clauze.
+
+3. Al treilea tip de clauza a fost ca sa existe exact o
+valoare de adevar pentru fiecare pachet ales, astfel
+luam doua cate doua valorile negate de pe linii.
+
+4. Al patrulea tip de clauza consta in parcurgerea 
+numerelor de la 1 la N (dimensiunea multimii initiale)
+si adaugam intr-o clauza coloanele aferente pachetelor
+ce contine acea valoare.
+
+Astfel, dupa formarea clauzelor, aceste sunt predate
+oracolului ce furnizeaza un raspuns valid acestei formule.
+Pentru a descrifra raspunsul oracolului, am parcurs
+literalii primiti, iar indicii coloanelor corespunzatoare
+literalilor pozitivi reprezentau indicele pachetelor alese.
+
+#### Complexitate:
+
+### Task 2 - Rise
+
+Pentru acest task, am ales sa tranform inputul primit
+intr-un input valid pentru task-ul 1. Pentru inceput
+am retinut numarul de carti ce nu sunt detinute pentru
+a determina N - dimensiunea de acoperire. Dupa care,
+am luat fiecare pachet citit si l-am transformat intr-o
+matrice asemanatoare celei primite la task-ul 1, asociind
+fiecarei carti o valoare numerica intr-un hashmap. In continuare, rezolvarea este identica cu cea de la
+task-ul anterior.
+
+#### Complexitate:
+
+### Task 3 - Redemption
+
+Acest task a constat in aplicarea unuei euristice pentru
+a aproxima valoarea minima de pachete necesare. Pentru aceasta
+aproximare am folosit urmatorul algoritm: intai am inclus pachetele
+ce contineau carti unice, dupa care am ales pachetul cu cea mai
+mare acoperire pana cand toate cartile necesare erau acoperite.
+
+
+#### Complexitate:
